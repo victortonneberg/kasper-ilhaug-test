@@ -31,6 +31,10 @@
 
         <section class="scroll-section" data-step="2">
             <p>Bjørn Kasper hadde investert før. Han kjente til kryptovaluta og visste hva en IPO var. Han startet forsiktig med et lite beløp. Investeringen tredoblet seg den første helgen. Da tok han et valg: I stedet for å betale for bilen han hadde tatt opp lån til, satte han inn 125 000 kroner i IPO-prosjektet.</p>
+        <aside class="info-box" id="infoBox1">
+            <strong>Initial Public Offering (IPO)</strong>
+            En IPO er når et selskap selger aksjer offentlig for første gang, ofte for å hente inn kapital til videre vekst. Investorene kjøper aksjer til en bestemt startpris før selskapet blir notert på børsen.
+        </aside>
             <p>Tre og en halv måned senere hadde investeringen vokst til 1,2 millioner kroner. Han så det med egne øyne, dag etter dag. Det føltes ekte.</p>
         </section>
 
@@ -46,10 +50,6 @@
             </section>
         </div>
 
-        <aside class="info-box" id="infoBox1">
-            <strong>White paper i kryptovaluta</strong>
-            Et white paper er et teknisk dokument som forklarer hvorfor et prosjekt trenger investering, hvordan det fungerer, og hva investor får tilbake. Profesjonelle svindlere bruker ofte sofistikerte white papers for å virke troverdige.
-        </aside>
 
         <section class="scroll-section" data-step="4">
             <h2>Øyeblikket der alt rakner</h2>
@@ -73,6 +73,12 @@
             <p>Bjørn Kasper Ilaug er ingen lettlurt person. I 2011 var han med som sivil i redningsaksjonen på Utøya. Likevel ble han lurt. Ikke fordi han var dum eller naiv, men fordi svindlerne visste nøyaktig hvordan tillit bygges. De sendte dokumentasjon. De viste tålmodighet. De lot investeringen vokse sakte over måneder. Og da tilliten var på plass, slo de til.</p>
             <p>«Aldri gå inn i investeringer uten at du er hundre prosent sikker på at personen som sitter på andre siden er ekte», sier Bjørn Kasper nå. Han gjør en kort pause. «Det er selvfølgelig lettere sagt enn gjort.»</p>
             <p>Telefonen hans ligger fortsatt på bordet. Instagram-kontoen er slettet. Pengene er sporløse. Men historien er hans, og den forteller han nå i håp om at andre skal slippe å sitte på Herr Nilsen med den samme knugende følelsen av å ha blitt lurt.</p>
+        </section>
+
+        <section class="pub-photo">
+            <div class="pub-caption">
+                Herr Nilsen, hvor Bjørn Kasper satt da meldingen kom.
+            </div>
         </section>
     </article>
 </main>
@@ -124,7 +130,12 @@
                         document.getElementById('alertBox').classList.add('visible');
                     }, 500);
                     break;
+                case 6:
+                    document.getElementById('warningOverlay').classList.remove('active');
+                    document.body.classList.remove('dark-turn');
+                    break;
             }
+            document.querySelector('.pub-photo').classList.add('active');
         })
         .onStepExit(response => {
             const step = parseInt(response.element.dataset.step);
