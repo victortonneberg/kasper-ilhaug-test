@@ -299,6 +299,75 @@ p {
     font-size: 1.1rem;
 }
 
+.portrait-section {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 2rem;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    margin: 2rem 0;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s ease;
+    border-radius: 20px;
+}
+
+.dark-turn .portrait-section {
+    background: linear-gradient(135deg, #2d3748 0%, #4a5568 100%);
+}
+
+.portrait-section.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.portrait-container {
+    max-width: 600px;
+    text-align: center;
+    opacity: 0;
+    transform: scale(0.95);
+    transition: all 0.8s ease 0.3s;
+}
+
+.portrait-section.active .portrait-container {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.portrait-container img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+    filter: grayscale(30%) contrast(110%);
+    transition: all 0.5s ease;
+}
+
+.portrait-container img:hover {
+    filter: grayscale(0%) contrast(100%);
+    transform: translateY(-5px);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+}
+
+.portrait-caption {
+    font-style: italic;
+    color: #495057;
+    margin-top: 2rem;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    padding: 0 2rem;
+    font-weight: 500;
+    border-left: 3px solid #3182ce;
+    padding-left: 1.5rem;
+    text-align: left;
+}
+
+.dark-turn .portrait-caption {
+    color: #e2e8f0;
+    border-left-color: #e74c3c;
+}
+
 
 @media (max-width: 768px) {
     .hero h1 {
@@ -309,5 +378,21 @@ p {
     }
     .money-amount {
         font-size: 2.5rem;
+    }
+
+    .portrait-section {
+        min-height: 60vh;
+        padding: 2rem 1rem;
+        margin: 1rem 0;
+    }
+
+    .portrait-container {
+        max-width: 100%;
+    }
+
+    .portrait-caption {
+        font-size: 1.1rem;
+        padding: 0 1rem;
+        margin-top: 1.5rem;
     }
 }
